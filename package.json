@@ -23,6 +23,7 @@
   "dependencies": {
     "axios": "^1.4.0",
     "commander": "^11.0.0",
+    "esm": "^3.2.25",
     "figlet": "^1.6.0"
   },
   "devDependencies": {
