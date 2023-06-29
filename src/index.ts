@@ -94,7 +94,7 @@ const createResult = async (array: string[]) => {
   const objEn: Record<string, string> = {};
   for (let i = 0; i < array.length; i++) {
     const en = await translateToEn(array[i]);
-    const key = getCamelCaseString(lowerCase(en).split(" "));
+    const key = getCamelCaseString(en.split(" "));
     objZh[key] = array[i];
     objEn[key] = capitalize(en);
   }
