@@ -1,7 +1,7 @@
 const program = require("commander");
 
 program
-  .version("1.0.0")
+  .version("1.0.2")
   .description("A translate tool")
   .option("-u, --url", "Your translate url")
   .parse(process.argv);
