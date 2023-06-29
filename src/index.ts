@@ -95,10 +95,14 @@ const createResult = async (array: string[]) => {
   const objZh: Record<string, string> = {};
   const objEn: Record<string, string> = {};
   for (let i = 0; i < array.length; i++) {
-    const en = await translateToEn(array[i]);
-    const key = getCamelCaseString(en.split(" "));
-    objZh[key] = array[i];
-    objEn[key] = capitalize(en);
+    try {
+      const en = await translateToEn(array[i]);
+      const key = getCamelCaseString(en.split(" "));
+      objZh[key] = array[i];
+      objEn[key] = capitalize(en);
+    } catch (error) {
+      console.log("error", error);
+    }
   }
   return {
     objZh,
