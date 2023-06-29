@@ -38,11 +38,13 @@ const translateToEn = async (content: string) => {
 };
 
 const capitalize = (str: string) => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-};
-
-const lowerCase = (str: string) => {
-  return str.charAt(0).toLowerCase() + str.slice(1);
+  let ret = "";
+  try {
+    ret = str.charAt(0).toUpperCase() + str.slice(1);
+  } catch (error) {
+    console.log("ret:", str, error);
+  }
+  return ret;
 };
 
 const getCamelCaseString = (arr: string[]) => {
