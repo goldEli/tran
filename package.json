@@ -1,10 +1,10 @@
 {
-  "name": "@samuel.miao/tran",
-  "version": "1.0.3",
+  "name": "ifuntran",
+  "version": "1.0.1",
   "description": "translate tool",
   "main": "dist/index.js",
   "bin": {
-    "tran": "./dist/index.js"
+    "tran": "bin/tran"
   },
   "scripts": {
     "start": "npx tsc && node dist/index.js",
