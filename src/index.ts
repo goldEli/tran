@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const { Command } = require("commander"); // add this line
 const figlet = require("figlet");
 const fs = require("fs");

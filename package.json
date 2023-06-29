@@ -1,8 +1,11 @@
 {
-  "name": "tran",
+  "name": "@samuel.miao/tran",
   "version": "1.0.0",
   "description": "translate tool",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "bin": {
+    "tran": "./dist/index.js"
+  },
   "scripts": {
     "start": "npx tsc && node dist/index.js",
     "build": "npx tsc"
