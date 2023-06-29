@@ -1,6 +1,6 @@
 {
   "name": "ifuntran",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "translate tool",
   "main": "dist/index.js",
   "bin": {
