@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "strict": true,
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
-    "sourceMap": true,
+    "lib": ["es6", "es2015", "dom"],
+    "declaration": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "strict": true,
+    "types": ["node"],
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "resolveJsonModule": true
   }
 }
