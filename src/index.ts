@@ -30,7 +30,7 @@ const translateToEn = async (content: string) => {
       },
     });
 
-    return response.data.content;
+    return response.data.content ?? "";
   } catch (error) {
     console.error(error);
   }
@@ -109,16 +109,29 @@ const createResult = async (array: string[]) => {
   };
 };
 
-async function main() {
+const getChineseArr = async (fileName: string) => {
+  const txt = await readFileAsync(fileName);
+  const arr = txt
+    .split("\n")
+    ?.map((item) => item.trim())
+    .filter((item) => !!item);
+  return arr;
+};
+
+const getFileName = async () => {
   const currentPath = process.cwd();
-  const fileName = path.join(currentPath, "i18n.txt");
+  const fileName = path.join(currentPath, "i18n.txt") as string;
   const isExists = await checkFileExists(fileName);
   if (!isExists) {
     printRed("请在当前项目中创建 i18n.txt 文件。（内容用回车进行分隔）");
-    return;
+    return Promise.reject();
   }
-  const txt = await readFileAsync(fileName);
-  const arr = txt.split("\n")?.map((item) => item.trim());
+  return fileName;
+};
+
+async function main() {
+  const fileName = await getFileName();
+  const arr = await getChineseArr(fileName);
   const result = await createResult(arr);
   console.log(result);
 }
