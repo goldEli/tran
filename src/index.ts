@@ -10,7 +10,7 @@ const program = new Command();
 console.log(figlet.textSync("IFUN Translate Tool"));
 
 program
-  .version("1.0.0")
+  .version("1.0.6")
   .description("An Translate Tool")
   .option("-u, --url  [value]", "translate api")
   .parse(process.argv);
